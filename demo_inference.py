@@ -37,6 +37,9 @@ def read_color_image(path, resize):
     # read and resize image
     cv_type = cv2.IMREAD_COLOR
     image = cv2.imread(str(path), cv_type)
+    #plot image
+    show_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    print("Image shape: ", show_image.shape)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     if resize is not None:
         image = cv2.resize(image, resize)
